@@ -3,6 +3,7 @@ void setup()
 {
   size(640,480);
   mousePoint = new ArrayList<DrawPoint>();
+  frameRate=120;
 }
 
 void draw(){
@@ -51,6 +52,14 @@ class DrawPoint{
     stroke(pointColor);
     strokeWeight(pointWeight);
     point(pointPosition.x,pointPosition.y);
+  }
+  
+}
+void keyPressed(){
+  if(key == 's' || key =='S'){
+    String filePath = "pic/ScreenShot/";
+    String time = month() +"_" +day() +"_" +hour() +"_" + minute() +"_" + second() ;
+    saveFrame(filePath +time+  ".jpg");
   }
   
 }
